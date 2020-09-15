@@ -3,7 +3,7 @@ import Flat from './flat';
 
 class Flatlist extends Component {
   renderList = (props) => {
-    return this.props.flats.flats.map((flat) => {
+    return this.props.flats.map((flat) => {
       return (
         <Flat
           flat={flat}

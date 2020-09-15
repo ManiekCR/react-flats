@@ -6,12 +6,6 @@ import Marker from './marker';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.flats = { flats };
-  }
-
   static defaultProps = {
     center: {
       lat: 48.884211,
@@ -20,11 +14,20 @@ class App extends Component {
     zoom: 11
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      flats,
+      selectedFlat: flats[0]
+    };
+  }
+
   render() {
     return (
       <div>
         <div className="flat-list">
-          <FlatList flats={this.flats} />
+          <FlatList flats={this.state.flats} />
         </div>
         <div className="map-container">
           <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
